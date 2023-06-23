@@ -1,6 +1,6 @@
 # flutter_clean_archi
 
-A new Flutter project.
+Example of Flutter clean architecture with Riverpod, IsarDB for myself. 
 
 ## Getting Started
 
