@@ -1,16 +1,6 @@
-# flutter_clean_archi
+# flutter clean architectur + riverpod and isarDB.
 
 Example of Flutter clean architecture with Riverpod, IsarDB for myself. 
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## アプリ画面/Application UI
+![appli_gamen](https://github.com/Kwan-SW/flutter-ca-example/assets/117418028/6530d8be-bf1c-450b-9229-0ecf5768a4a3)
