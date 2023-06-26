@@ -1,12 +1,13 @@
 import 'package:flutter_clean_archi/domain/injector.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_clean_archi/domain/entity/memo.dart';
 import 'package:flutter_clean_archi/domain/usecase/memos/create_memo_usecase.dart';
 import 'package:flutter_clean_archi/domain/usecase/memos/delete_memo_usecase.dart';
 import 'package:flutter_clean_archi/domain/usecase/memos/get_memos_usecase.dart.dart';
 import 'package:flutter_clean_archi/domain/usecase/memos/update_memo_usecase.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:isar/isar.dart';
 
+/// memo viewmodel provider.
 final memoVMProvider =
     StateNotifierProvider<MemoViewModel, List<Memo>>((ref) {
   return MemoViewModel(
@@ -16,6 +17,7 @@ final memoVMProvider =
       ref.watch(updateMemoUseCaseProvider));
 });
 
+/// Memo viewmodel.
 class MemoViewModel extends StateNotifier<List<Memo>> {
   final CreateMemoUseCase _createProvider;
   final UpdateMemoUseCase _updateProvider;
@@ -27,6 +29,7 @@ class MemoViewModel extends StateNotifier<List<Memo>> {
     getAll();
   }
 
+  /// Add memo.
   Future<void> add({required String title, required String content}) async {
     // TODO: implement add
     Memo memoItem =
@@ -34,8 +37,8 @@ class MemoViewModel extends StateNotifier<List<Memo>> {
     state = [...state, memoItem];
   }
 
+  /// Delete memo.
   Future<void> delete({required Id id}) async {
-    // TODO: implement delete
     await _deleteProvider.execute(id: id);
     state = [
       for (final temp in state)
@@ -43,13 +46,13 @@ class MemoViewModel extends StateNotifier<List<Memo>> {
     ];
   }
 
+  /// Read memos.
   Future<void> getAll() async {
-    // TODO: implement getAll
     state = await _getAllProvider.execute();
   }
 
+  /// Update memo.
   Future<void> update({required Memo memoItem}) async {
-    // TODO: implement update
     await _updateProvider.execute(memo: memoItem);
     state = [
       for (final temp in state)

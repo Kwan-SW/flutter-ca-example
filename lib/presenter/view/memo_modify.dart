@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_clean_archi/domain/entity/memo.dart';
 import 'package:flutter_clean_archi/presenter/viewmodel/memo_viewmodel.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:isar/isar.dart';
-import '../../domain/entity/memo.dart';
 
 /// State provider of Memo content (TextFormField).
 final contentInputStateProvider =
